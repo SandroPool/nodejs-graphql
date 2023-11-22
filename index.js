@@ -1,12 +1,11 @@
 const { ApolloServer } = require('apollo-server');
 const { verify } = require('jsonwebtoken');
-const express = require('express');
+
 require('dotenv').config();
 
 const typeDefs = require('./db/schema');
 const resolvers = require('./db/resolvers');
 
-const app = express();
 
 //Conección DB
 require('./config/db');
@@ -34,7 +33,7 @@ const start = async _  => {
     // });
 
     apolloServer.listen(process.env.PORT || 4000, _=>{
-        console.log('Server on port', process.env.PORT || 4000);
+        console.log('Server on port',process.env.PORT||4000 );
     });
 }
 
